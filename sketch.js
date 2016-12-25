@@ -9,7 +9,7 @@ function preload() { //best to load JSON in preload
   //var urlny = 'http://api.openweathermap.org/data/2.5/weather?APPID=6fbadd7b22efd6545720c02b303d5deb&q=NewYork,USA&units=imperial'
   //var urlchi = 'http://api.openweathermap.org/data/2.5/weather?APPID=6fbadd7b22efd6545720c02b303d5deb&q=Chicago,USA&units=imperial'
  
- var urlchi= 'http://api.wunderground.com/api/e9e7ffff3e289a8b/conditions/q/IL/Chicago.json';
+ var urlchi= 'https://api.wunderground.com/api/e9e7ffff3e289a8b/conditions/q/IL/Chicago.json';
  
   //weatherNY = loadJSON(urlny);
   weatherChi = loadJSON(urlchi);
