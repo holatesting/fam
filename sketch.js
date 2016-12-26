@@ -147,7 +147,7 @@ function intro() {
     script = "But eventually";
   } else if (click == 6) {
 
-    for (var i = 0; i < width; i += 10) { //initialize for loop with var and no data type
+    for (var i = 0; i < width; i += 10) { 
       line(mouseX, i, i, mouseY);
     }
     script = "you will see more things happening here.";
@@ -213,6 +213,7 @@ function menu() {
 
 }
 
+/*
 function livingroom() {
   background(255);
 
@@ -326,3 +327,5 @@ function outside() {
     place = "menu";
   }
 }
+
+*/
