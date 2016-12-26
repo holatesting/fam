@@ -51,6 +51,7 @@ function preload() {
   menorah = loadImage("../assets/menorah.png");
 */
 
+ //image assets
   outsideLaser = loadImage("outside.jpg");
   menorah = loadImage("menorah.png");
 
@@ -58,7 +59,6 @@ function preload() {
   weatherChi = loadJSON(urlchi);
   forecastChi = loadJSON(urlForecastChi);
   hourlyChi = loadJSON(urlHourlyChi);
-
 }
 
 
@@ -218,7 +218,7 @@ function menu() {
 
 }
 
-/*
+
 function livingroom() {
   background(255);
 
@@ -333,4 +333,3 @@ function outside() {
   }
 }
 
-*/
