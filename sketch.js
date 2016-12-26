@@ -26,8 +26,8 @@ var chiIcon;
 function preload() {
   var urlchi = 'https://api.wunderground.com/api/e9e7ffff3e289a8b/conditions/q/IL/Lakemoor.json';
   var urlny = 'https://api.wunderground.com/api/e9e7ffff3e289a8b/conditions/q/NY/Brooklyn.json';
-   var urlForecastChi = 'http://api.wunderground.com/api/e9e7ffff3e289a8b/forecast/q/IL/Lakemoor.json';
-  var urlHourlyChi = 'http://api.wunderground.com/api/e9e7ffff3e289a8b/hourly/q/IL/Lakemoor.json';
+   var urlForecastChi = 'https://api.wunderground.com/api/e9e7ffff3e289a8b/forecast/q/IL/Lakemoor.json';
+  var urlHourlyChi = 'https://api.wunderground.com/api/e9e7ffff3e289a8b/hourly/q/IL/Lakemoor.json';
 
   weatherNY = loadJSON(urlny);
   weatherChi = loadJSON(urlchi);
