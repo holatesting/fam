@@ -45,9 +45,11 @@ function preload() {
   var urlForecastChi = 'https://api.wunderground.com/api/e9e7ffff3e289a8b/forecast/q/IL/Lakemoor.json';
   var urlHourlyChi = 'https://api.wunderground.com/api/e9e7ffff3e289a8b/hourly/q/IL/Lakemoor.json';
 
+/*
   //image assets
   outsideLaser = loadImage("../assets/outside.jpg");
   menorah = loadImage("../assets/menorah.png");
+*/
 
   weatherNY = loadJSON(urlny);
   weatherChi = loadJSON(urlchi);
