@@ -68,7 +68,7 @@ function setup() {
   candleMelt = 92;
 
 
-  chiIcon = loadImage(weatherChi.current_observation.icon_url);
+  //chiIcon = loadImage(weatherChi.current_observation.icon_url);
 
 
   //current year
