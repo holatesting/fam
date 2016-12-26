@@ -1,15 +1,38 @@
+//updated 12/26/16
+
 var weatherNY;
 var weatherChi;
+
+var r,g,b;
 
 var click = 0;
 var script = " ";
 
+//year
+var yearNum;
+// month number
+var monthNum;
+// month string
+var monthName;
+// date number
+var date;
+// weekday name
+var weekdayName;
+//chicago hour
+var chiHour;
+//chicago current weather icon
+var chiIcon;
+
 function preload() {
   var urlchi = 'https://api.wunderground.com/api/e9e7ffff3e289a8b/conditions/q/IL/Lakemoor.json';
   var urlny = 'https://api.wunderground.com/api/e9e7ffff3e289a8b/conditions/q/NY/Brooklyn.json';
+   var urlForecastChi = 'http://api.wunderground.com/api/e9e7ffff3e289a8b/forecast/q/IL/Lakemoor.json';
+  var urlHourlyChi = 'http://api.wunderground.com/api/e9e7ffff3e289a8b/hourly/q/IL/Lakemoor.json';
 
   weatherNY = loadJSON(urlny);
   weatherChi = loadJSON(urlchi);
+   forecastChi = loadJSON(urlForecastChi);
+  hourlyChi = loadJSON(urlHourlyChi);
 }
 
 
@@ -22,6 +45,20 @@ function setup() {
 
 
   textAlign(LEFT, CENTER);
+  
+   //current year
+  yearNum = hourlyChi.hourly_forecast[0].FCTTIME.year;
+  // month number
+  monthNum = hourlyChi.hourly_forecast[0].FCTTIME.mon;
+  // month string
+  monthName = hourlyChi.hourly_forecast[0].FCTTIME.month_name;
+  // date number
+  date = hourlyChi.hourly_forecast[0].FCTTIME.mday;
+  // weekday name
+  weekdayName = hourlyChi.hourly_forecast[0].FCTTIME.weekday_name;
+  //chicago hour
+  chiHour = hourlyChi.hourly_forecast[0].FCTTIME.hour;
+
 
   /*
   text("In New York we have " + weatherNY.weather[0].description, width / 2, height / 2 - 60);
@@ -76,8 +113,9 @@ function draw() {
   } else if (click == 12) {
     textSize(44);
     script = "";
-    fill(255, 0, 0);
-    text("MERRY CHRISTMAS!", 0, height / 2 + 25);
+    fill(r,g,b);
+  //  text("MERRY CHRISTMAS!", 0, height / 2 + 25);
+    text("Happy " + weekdayName + "!",0, height / 2 + 25 );
     fill(0, 0, 255);
     text("HAPPY HANUKKAH!", 0, height / 2 - 25);
   } 
@@ -92,5 +130,8 @@ function mousePressed() {
     click = 0;
   } else {
     click++;
+  r=random(255);
+  g=random(255);
+  b=random(255);
   }
 }
