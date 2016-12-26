@@ -51,6 +51,9 @@ function preload() {
   menorah = loadImage("../assets/menorah.png");
 */
 
+  outsideLaser = loadImage("outside.jpg");
+  menorah = loadImage("menorah.png");
+
   weatherNY = loadJSON(urlny);
   weatherChi = loadJSON(urlchi);
   forecastChi = loadJSON(urlForecastChi);
