@@ -72,6 +72,7 @@ function setup() {
   candleH = 50;
   candleMelt = 92;
 
+noStroke();
 
   //chiIcon = loadImage(weatherChi.current_observation.icon_url);
 
@@ -225,6 +226,7 @@ function livingroom() {
   //TREE 
   fill(0);
   noStroke();
+  strokeWeight(2);
   rect(treeX + 45, treeY + 70, 10, 50);
   //fill(mouseX, mouseY, 0);
   //triangle(treeX - 30, treeY + 70, treeX + 50, treeY - 20, treeX + 130, treeY + 70);
@@ -240,7 +242,7 @@ function livingroom() {
     stroke(random(255), random(255), random(255));
     line(treeX + 50, treeY - 50, treeX + i, treeY + random(0, 5));
   }
-
+noStroke();
 
   if (mouseIsPressed) {
     place = "menu";
@@ -257,6 +259,18 @@ function kitchen() {
   console.log(date);
 
   fill(255, 0, 0);
+  noStroke();
+
+
+if (chiHour >= 17 && chiHour < 23) {
+    if (candleMelt > 0) {
+      candleMelt -= 0.1;
+      candleH -= 0.1;
+    }
+  } else {
+    candleMelt = 0;
+    candleH = 0;
+  }
 
   //candle display by day
   if (date == '26') {
@@ -306,15 +320,7 @@ function kitchen() {
     rect(width / 2 + 231, height / 2 - candleH, 8, candleMelt); //1
   }
 
-  if (chiHour >= 17 && chiHour < 23) {
-    if (candleMelt > 0) {
-      candleMelt -= 0.1;
-      candleH -= 0.1;
-    }
-  } else {
-    candleMelt = 0;
-    candleH = 0;
-  }
+  
 
 
 
