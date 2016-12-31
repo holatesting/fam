@@ -45,13 +45,13 @@ function preload() {
   var urlForecastChi = 'https://api.wunderground.com/api/e9e7ffff3e289a8b/forecast/q/IL/Lakemoor.json';
   var urlHourlyChi = 'https://api.wunderground.com/api/e9e7ffff3e289a8b/hourly/q/IL/Lakemoor.json';
 
-/*
-  //image assets
-  outsideLaser = loadImage("../assets/outside.jpg");
-  menorah = loadImage("../assets/menorah.png");
-*/
+  /*
+    //image assets
+    outsideLaser = loadImage("../assets/outside.jpg");
+    menorah = loadImage("../assets/menorah.png");
+  */
 
- //image assets
+  //image assets
   outsideLaser = loadImage("outside.jpg");
   menorah = loadImage("menorah.png");
 
@@ -72,7 +72,7 @@ function setup() {
   candleH = 50;
   candleMelt = 92;
 
-noStroke();
+  noStroke();
 
   //chiIcon = loadImage(weatherChi.current_observation.icon_url);
 
@@ -153,7 +153,7 @@ function intro() {
     script = "But eventually";
   } else if (click == 6) {
 
-    for (var i = 0; i < width; i += 10) { 
+    for (var i = 0; i < width; i += 10) {
       line(mouseX, i, i, mouseY);
     }
     script = "you will see more things happening here.";
@@ -182,8 +182,14 @@ function intro() {
     fill(r, g, b);
     //  text("MERRY CHRISTMAS!", 0, height / 2 + 25);
     text("Happy " + weekdayName + "!", 0, height / 2 + 25);
-    fill(0, 0, 255);
-    text("HAPPY HANUKKAH!", 0, height / 2 - 25);
+    if (date == '31') {
+      fill(0, 0, 255);
+      text("HAPPY HANUKKAH!", 0, height / 2 - 25);
+    }
+    else if (date == '1') {
+      fill(0, 0, 255);
+      text("HAPPY NEW YEAR!", 0, height / 2 - 25);
+    }
   } else if (click == 13) {
     place = "menu";
   }
@@ -242,7 +248,7 @@ function livingroom() {
     stroke(random(255), random(255), random(255));
     line(treeX + 50, treeY - 50, treeX + i, treeY + random(0, 5));
   }
-noStroke();
+  noStroke();
 
   if (mouseIsPressed) {
     place = "menu";
@@ -262,7 +268,7 @@ function kitchen() {
   noStroke();
 
 
-if (chiHour >= 17 && chiHour < 23) {
+  if (chiHour >= 17 && chiHour < 23) {
     if (candleMelt > 0) {
       candleMelt -= 0.1;
       candleH -= 0.1;
@@ -320,7 +326,7 @@ if (chiHour >= 17 && chiHour < 23) {
     rect(width / 2 + 231, height / 2 - candleH, 8, candleMelt); //1
   }
 
-  
+
 
 
 
@@ -338,4 +344,3 @@ function outside() {
     place = "menu";
   }
 }
-
